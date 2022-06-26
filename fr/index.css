@@ -1,0 +1,24 @@
+#click { 
+   height: 17px;
+   border-radius: 10px;
+   border-width: 2.5px;
+   transition: border-color 999ms
+}
+
+#click:hover {
+    border-color: red
+}
+
+#inp {
+    height: 4.26mm;
+    width: 0.26mm;
+    transition: border-color 1s
+}
+
+#inp:hover {
+    border-color: yellow
+}
+
+/* body {
+    background-color: #373737
+} */

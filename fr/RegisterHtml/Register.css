@@ -1,0 +1,11 @@
+#inp-username {
+    position: absolute;
+    border-color: blue;
+    border-radius: 5px
+}
+
+#inp-password {
+    position: absolute;
+    border-color: red;
+    border-radius: 5px
+}
