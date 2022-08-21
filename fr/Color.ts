@@ -1,6 +1,6 @@
 export class Color
 {
-    constructor(r, g, b)
+    constructor(r?: string, g?: string, b?: string)
     {
         this.r = r;
         this.g = g;
@@ -8,7 +8,7 @@ export class Color
     }
 }
 
-export const get_rgb_channel = (c_color, rgb_channel) =>
+export const get_rgb_channel = (c_color: string | undefined, rgb_channel: any): any | object =>
 {
     /* banned colors - due to negative connotations */
     let white = '(255,255,255)';
@@ -16,24 +16,24 @@ export const get_rgb_channel = (c_color, rgb_channel) =>
     let brown = '(165,42,42)';
 
     /* rgb */
-    var unavailabeColors = [white, pink, brown]; // mitigate lewd drawings
-    for (var i=0;i<unavailabeColors.length;i++)
+    const NULL_COLORS: string[] = [white, pink, brown]; // mitigate lewd drawings
+    NULL_COLORS.forEach(i =>
     {
-        if (c_color != unavailabeColors[i])
+        if (c_color != NULL_COLORS[i])
         {
             const c = new Color(rgb_channel);
             let nums_split = c_color.split(",");
             let left_split = nums_split.split("(");
-            /* use this to get color channels */
             let final_right_split = left_split.split(")");
+            // split color channels
             c.r = final_right_split[0];
             c.g = final_right_split[1];
             c.b = final_right_split[2];
             return c;
         }else
         {
-            console.log("contains innapropriate color schema; try different colors");
+            console.log("contains inappropriate color schema; try different colors besided");
             return [""];
         }
-    }
+    });
 }

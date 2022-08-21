@@ -1,22 +1,24 @@
-var click = document.getElementById("click");
-var inp = document.getElementById("inp");
+const click: object = document.getElementById("click");
+const inp: object = document.getElementById("inp");
 
-import {ColorData} from "./Database.js";
-import {Color, get_rgb_channel} from "./Color.js";
+console.log(typeof(click))
+
+import {ColorData} from "./Database";
+import {Color, get_rgb_channel} from "./Color";
 
 function click_button()
 {
-    var get_btn_color = click.style.backgroundColor = 'blue';
-    let conv_to_rgb = this.getComputedStyle(click).backgroundColor;
+    let get_btn_color: any = click.style.backgroundColor = 'blue';
     click.addEventListener("click", (event) =>
     {
         try
         {
             /* edge case */
-            var click_color = get_btn_color;
+            let conv_to_rgb: any | null = this.getComputedStyle(click).backgroundColor;
+            let click_color: any = get_btn_color;
             console.log(`selected: ${click_color}`);
-            let pbsd = paint_block_with_saved_data(click_color);
-            let cd = new ColorData();
+            let pbsd: any | string= paint_block_with_saved_data(click_color);
+            let cd: any = new ColorData();
             cd.ColorSave(pbsd);
             get_rgb_channel(click_color, conv_to_rgb);
         }
@@ -29,17 +31,18 @@ function click_button()
 
 click_button();
 
-var paint_block_with_saved_data = (direct_color) => {
+const paint_block_with_saved_data = (direct_color: any): any | string => {
     inp.addEventListener("click", () => {
         inp.style.backgroundColor = direct_color;
         // get_rgb_channel(direct_color, rgb_channel);
         if (direct_color != 'white') { // check if its colored
-            var save = [];
-            save.push(direct_color)
-            for (var x=0;x<save.length;x++) {
+            const save: any[] = [];
+            save.push(direct_color);
+            save.forEach(x =>
+            {
                 console.log(save[x]);
                 return save[x];
-            }
+            })
         }
     })
 }
