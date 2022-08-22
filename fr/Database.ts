@@ -1,18 +1,24 @@
-const sql: any | object = import('sqlite3')
-const readable: any = sql.verbose()
-let database: any | object = new sql.Database(":memory:");
+import * as sqlite3 from "sqlite3"
+
+let db: any = new sqlite3.Database(':memory:')
 
 export class ColorData
 {
-    public ColorSave = database.serialize ((color: string) =>
+    public stmt: any;
+
+    public ColorSave = (color: string): any | string =>
     {
-        database.run("CREATE TABLE colors (c str)");
-        database.prepare(`INSERT INTO colors VALUES (${color})`);
-        database.finalize();
-        database.each("SELECT * FROM colors", (id, expr) =>
+        db.serialize(() =>
         {
-            return (id + " " + expr);
+            db.run("CREATE TABLE saved_colors (_color str)");
+            this.stmt = db.prepare("INSERT INTO saved_colors VALUES ()");
+            this.stmt(color);
+            db.finalize;
         });
-        database.close();
-    });
+        return (db.each("SELECT * FROM saved_colors ()"), (err, row) =>
+        {
+           row._color;
+        });
+    }
+
 }

@@ -1,5 +1,6 @@
 #inp-username {
     position: absolute;
+    right: 50px;
     border-color: blue;
     border-radius: 5px
 }
@@ -8,4 +9,8 @@
     position: absolute;
     border-color: red;
     border-radius: 5px
+}
+
+#reg-btn {
+    border-radius: 4px;
 }

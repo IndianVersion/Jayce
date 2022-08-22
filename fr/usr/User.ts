@@ -21,10 +21,10 @@ class User
     public get_level = (player_id: number) =>
     {
         const UInfo: any = new UserInfo();
-        const PData: any
+        const PData: any = new PlayerData();
         if (player_id !== 0 || null)
         {
-            if (get_player_data_via_id(player_id)) {
+            if (PData.get_player_data_via_id(player_id)) {
 
             }
         }

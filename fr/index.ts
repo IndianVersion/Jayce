@@ -1,12 +1,10 @@
-const click: object = document.getElementById("click");
-const inp: object = document.getElementById("inp");
-
-console.log(typeof(click))
-
 import {ColorData} from "./Database";
-import {Color, get_rgb_channel} from "./Color";
+import {get_rgb_channel} from "./Color";
 
-function click_button()
+const click: any = document.getElementById("click");
+const inp: any = document.getElementById("inp");
+
+function click_button(): void
 {
     let get_btn_color: any = click.style.backgroundColor = 'blue';
     click.addEventListener("click", (event) =>
@@ -17,14 +15,14 @@ function click_button()
             let conv_to_rgb: any | null = this.getComputedStyle(click).backgroundColor;
             let click_color: any = get_btn_color;
             console.log(`selected: ${click_color}`);
-            let pbsd: any | string= paint_block_with_saved_data(click_color);
+            let paint_block: any | string= paint_block_with_saved_data(click_color);
             let cd: any = new ColorData();
-            cd.ColorSave(pbsd);
+            cd.ColorSave(paint_block);
             get_rgb_channel(click_color, conv_to_rgb);
         }
         catch(e)
         {
-            console.log(`Variable: click_color does not equate to the color "blue" or got ${click_color} ${e}`)
+            console.log(`Variable: click_color does not equate to the color "blue" or got ${click_color} + ${e}`)
         }
     })
 }
