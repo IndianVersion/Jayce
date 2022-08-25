@@ -14,3 +14,10 @@
 #reg-btn {
     border-radius: 4px;
 }
+
+#randusername {
+    position: absolute;
+    right: 100px;
+    left: 50px;
+    bottom: 700px
+}
