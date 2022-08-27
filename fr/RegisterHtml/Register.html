@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Registry | Sign In</title>
+    <title>r-place | Sign In</title>
 </head>
 <body>
     <div class="register">
-        <div class="register-area">
-            <button id="randusername">Roll-A-Username</button>
-        </div>
+        <button id="reg-btn">register?</button>
         <label for="inp-username">
             <textarea id="inp-username" placeholder="Create Username." minlength="3" maxlength="20"></textarea>
+            <button id="randomize-username">randomize username</button>
         </label>
         <label for="inp-password">
             <textarea id="inp-password" placeholder="Create Password." minlength="6" maxlength="8"></textarea>
+            <button id="randomize-password">randomize password</button>
         </label>
     </div>
 </body>
     <link href="Register.css" rel="stylesheet">
-    <script src="Register.js"></script>
+    <script type="module" src="Register.js"></script>
 </html>

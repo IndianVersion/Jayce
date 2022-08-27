@@ -1,4 +1,4 @@
-import {TryUsername} from "./RollA";
+import {TryUsername, TryPassword} from "./RollA.js";
 
 const reg_btn: any = document.getElementById("reg-btn");
 const cr_username: any = document.getElementById("inp-username");
@@ -16,7 +16,7 @@ export class Register implements InternalUserInfo
     private usrInfo: string = cr_username.innerText;
     private passInfo: string = cr_password.innerText;
 
-    private assume_username = (): void =>
+    assume_username = (): void =>
     {
         reg_btn.addEventListener("click", () =>
         {
@@ -28,9 +28,15 @@ export class Register implements InternalUserInfo
         });
     }
 
-    private assume_password = (): void =>
+    assume_password = (): void =>
     {
-        return;
+        reg_btn.addEventListener("click", () =>
+        {
+            if (this.passInfo)
+            {
+                this.password = TryPassword();
+            }
+        });
     }
 
     id: number;

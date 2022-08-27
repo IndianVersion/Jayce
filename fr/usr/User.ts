@@ -1,6 +1,4 @@
-'use strict'
-
-import {PlayerData} from "./Player"
+import {PlayerData} from "./Player.js"
 
 class UserInfo
 {

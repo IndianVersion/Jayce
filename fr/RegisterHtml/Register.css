@@ -15,9 +15,16 @@
     border-radius: 4px;
 }
 
-#randusername {
+#randomize-username {
     position: absolute;
     right: 100px;
     left: 50px;
     bottom: 700px
+}
+
+#randomize-password {
+    position: absolute;
+    right: 100px;
+    left: 25px;
+    bottom: 600px
 }
