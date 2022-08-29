@@ -34,7 +34,7 @@ export const get_rgb_channel = (c_color: undefined | string, rgb_channel: any): 
             return c;
         }else
         {
-            console.log("contains inappropriate color schema; try different colors besided");
+            console.log(`contains inappropriate color schema; try colors other than: ${NULL_COLORS}`);
             return [""];
         }
     });

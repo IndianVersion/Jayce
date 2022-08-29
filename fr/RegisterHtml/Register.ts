@@ -43,6 +43,3 @@ export class Register implements InternalUserInfo
     username: any;
     password: any;
 }
-
-const r: any = new Register();
-r.assume_username();

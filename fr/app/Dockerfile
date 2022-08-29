@@ -1,7 +1,5 @@
-CMD ["tsc *.ts --resolveJsonModule"]
-WORKDIR "/Core"
-CMD ["tsc *.ts --resolveJsonModule"]
-WORKDIR "/RegisterHtml"
-CMD ["tsc *.ts --resolveJsonModule"]
-WORKDIR "/usr"
-CMD ["tsc *.ts --resolveJsonModule"]
+FROM k011/r-place
+#COPY "*.ts" "run"
+#WORKDIR "run"
+#RUN ["tsc *.ts --resolveJsonModule"]
+#CMD ["browserify Register.js -o PackedRegister.js"]
